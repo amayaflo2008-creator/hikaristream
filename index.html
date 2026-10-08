@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Movie & TV Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div style="position:relative">
+    <input id="search" placeholder="Search movies or TV shows" autocomplete="off">
+    <div id="suggestions"></div>
+  </div>
+</header>
+
+<div id="home">
+  <div class="section" id="moviesTitle">Top 10 Movies Today</div>
+  <div class="rowContainer" id="moviesRow">
+    <button class="arrow arrowLeft" onclick="slide('movies',-1)">❮</button>
+    <div id="movies" class="row"></div>
+    <button class="arrow arrowRight" onclick="slide('movies',1)">❯</button>
+  </div>
+
+  <div class="section" id="tvTitle">Top 10 TV Shows Today</div>
+  <div class="rowContainer">
+    <button class="arrow arrowLeft" onclick="slide('tv',-1)">❮</button>
+    <div id="tv" class="row"></div>
+    <button class="arrow arrowRight" onclick="slide('tv',1)">❯</button>
+  </div>
+</div>
+
+<div id="results" class="grid"></div>
+
+<!-- DETAILS -->
+<div id="details">
+  <button id="backBtn">← Back</button>
+  <button id="launchBtn">Launch</button>
+
+  <div id="launchOverlay">
+    <select id="seasonSelect"></select>
+    <select id="episodeSelect"></select>
+    <button id="confirmLaunch">Confirm</button>
+  </div>
+
+  <div id="banner">
+    <div class="bannerContent">
+      <h1 id="title"></h1>
+      <p id="overview"></p>
+      <p id="rating"></p>
+      <p id="genres"></p>
+    </div>
+  </div>
+
+  <div class="section">Cast</div>
+  <div id="cast" class="castRow"></div>
+</div>
+
+<!-- PLAYER -->
+<div id="player">
+  <button id="closePlayer">✕</button>
+  <div id="playerBox"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+<script src="app.js"></script>
+</body>
+</html>
